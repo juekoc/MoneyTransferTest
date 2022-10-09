@@ -60,7 +60,8 @@ Show the updated account balances from database:
 ![image](https://user-images.githubusercontent.com/115390606/194756522-2066ea3f-27dc-4511-8d5e-3688e71a7a64.png)
 
   *** Validations for Money Transfer ***
-  * Not engough money
+  * Not enough money
+  
   Command: curl -X POST -d "fromaccount=1&toaccount=2&amount=100" http://localhost:8080/moneytransfer/transferMoney
   
   Output: Unsufficient funds in the first account  
