@@ -56,14 +56,9 @@ public class Account {
 
 	// Transfer the money between the accounts
 	public void transfer(Account from, Account to, double transferAmount) {
-		if (from.balance >= transferAmount) {
+		
 			from.debitAccount(transferAmount);
 			to.creditAccount(transferAmount);
-
-			System.out.println("Transfer between account was successful.");
-		} else {
-			System.out.println("There are unsufficient funds. The transaction can not happen");
-		}
 	}
 
 	@Override
