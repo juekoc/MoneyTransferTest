@@ -45,14 +45,21 @@ public class Controller {
 			double oldBalanceFrom = fromAccount.getBalance();
 			double oldBalanceTo = toAccount.getBalance();
 
-			myAccount.transfer(fromAccount, toAccount, amount);
+			if (amount > oldBalanceFrom) {
+				// There are unsufficient funds. The transaction can not happen
+				return "There are unsufficient funds in Account Id: " + FromAccountId
+						+ ". The transaction can not happen";
+			} else {
+				// Perform the money transfer between accounts
+				myAccount.transfer(fromAccount, toAccount, amount);
 
-			accountRepository.save(fromAccount);
-			accountRepository.save(toAccount);
+				accountRepository.save(fromAccount);
+				accountRepository.save(toAccount);
 
-			return "AccountId: " + FromAccountId + " had balance " + oldBalanceFrom + " and has now balance "
-					+ fromAccount.getBalance() + ". AccountId: " + ToAccountId + " had balance: " + oldBalanceTo
-					+ " and has now balance " + toAccount.getBalance();
+				return "AccountId: " + FromAccountId + " had balance " + oldBalanceFrom + " and has now balance "
+						+ fromAccount.getBalance() + ". AccountId: " + ToAccountId + " had balance: " + oldBalanceTo
+						+ " and has now balance " + toAccount.getBalance();
+			}
 		} else {
 			if (accountRepository.existsById(FromAccountId) == false) {
 				return "We could not find Id: " + FromAccountId + " in the database";
