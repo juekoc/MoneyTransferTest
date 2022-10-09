@@ -71,7 +71,7 @@ Show the updated account balances from database:
   
   Command: curl -X POST -d "fromaccount=1&toaccount=8&amount=10" http://localhost:8080/moneytransfer/transferMoney
   
-  Output: 
+  Output: Account Id does not exist
   ![image](https://user-images.githubusercontent.com/115390606/194759185-5effff17-a8c6-48a4-abb2-d43ded665bae.png)
 
   
