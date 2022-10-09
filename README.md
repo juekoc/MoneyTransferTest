@@ -1,1 +1,1 @@
-"# MoneyTransferTest" 
+"MoneyTransferProject - Java application" 
