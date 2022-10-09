@@ -59,4 +59,18 @@ Output:
 Show the updated account balances from database: 
 ![image](https://user-images.githubusercontent.com/115390606/194756522-2066ea3f-27dc-4511-8d5e-3688e71a7a64.png)
 
-* 
+  *** Validations for Money Transfer ***
+  * Not engough money
+  Command: curl -X POST -d "fromaccount=1&toaccount=2&amount=100" http://localhost:8080/moneytransfer/transferMoney
+  
+  Output: Unsufficient funds in the first account  
+  ![image](https://user-images.githubusercontent.com/115390606/194759096-e5bcf984-5cf7-444b-94b1-40ca6e52005e.png)
+   
+  * Money transfer failed because we could not identify one of the account ids;
+  
+  Command: curl -X POST -d "fromaccount=1&toaccount=8&amount=10" http://localhost:8080/moneytransfer/transferMoney
+  
+  Output: 
+  ![image](https://user-images.githubusercontent.com/115390606/194759185-5effff17-a8c6-48a4-abb2-d43ded665bae.png)
+
+  
