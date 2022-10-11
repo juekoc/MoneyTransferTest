@@ -80,6 +80,10 @@ I have enabled the application to use Docker. The docker Images is buid with Mav
   
 ![image](https://user-images.githubusercontent.com/115390606/195055439-c3815abc-1674-44b2-b44e-196b16222537.png)
 
+The below shows that the application is running: 
+
+![image](https://user-images.githubusercontent.com/115390606/195059756-2cd1ee6f-7b27-405b-8093-b650bcd41784.png)
+
 The Money Transfer application is running inside the docker. I have created a bash script to show that the request can be called within a bash script. The script executes the transfer of 10 euros from account 2 to account 1.  Also I executed the curl commands to display output the result. 
 
 ![image](https://user-images.githubusercontent.com/115390606/195057747-a6844fa6-608c-4061-b2f3-ffdcb510a44a.png)
