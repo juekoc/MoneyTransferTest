@@ -76,11 +76,11 @@ Show the updated account balances from database:
 
   ----------------------------------------------------------------------------------------------------------------
   
-I have enabled the application to use Docker. The docker Images is buid with Maven and it is called backend-container:
+I have enabled the application to use Docker. The docker Images is buid with Maven and it is called backend-container. 
   
 ![image](https://user-images.githubusercontent.com/115390606/195055439-c3815abc-1674-44b2-b44e-196b16222537.png)
 
-The Money Transfer application is running inside the docker. I have created a bash script to show that the request can be called within a bash script. Also I executed the curl commands to display output the result. 
+The Money Transfer application is running inside the docker. I have created a bash script to show that the request can be called within a bash script. The script executes the transfer of 10 euros from account 2 to account 1.  Also I executed the curl commands to display output the result. 
 
 ![image](https://user-images.githubusercontent.com/115390606/195057747-a6844fa6-608c-4061-b2f3-ffdcb510a44a.png)
 
@@ -90,5 +90,5 @@ Below are the values shows in the database after the update of balance.
 
 ------------------------------------------------------------------------------------------------------------------
 
-Since it is just a test I have not included the below however these are things that can be improved in the application: 
+Since it is just a simple test I have not included the below, however these are things that can be improved in the application: 
 * To add more error/expection handling and add more logs.
