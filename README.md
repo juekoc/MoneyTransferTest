@@ -1,6 +1,6 @@
 "MoneyTransferProject - Java application" built by Juela Giorgio
 
-This is a RESTful API for money transfers between accounts. I have used Maven for depency injection using Spring and Java as the main programing language. It uses SpringData JPA to connect and access a local MySQL database.
+This is a RESTful API for money transfers between accounts. I have used Maven for dependency injection using Spring and Java as the main programing language. It uses SpringData JPA to connect and access a local MySQL database.
 
 - I have used Spring Initializr  that creates a simple class for the application - MoneytransferTestAppApplication. The main() method uses Spring Boot’s SpringApplication.run() method to launch an application. 
 - I have created Account class where I have defined Account as JPA Entity Model. The Account class has 3 attributes: id,  name and balance. These properties are mapped to fields used in the MySQL table. In here I have also defined the method that will make possible the transfer between accounts. 
