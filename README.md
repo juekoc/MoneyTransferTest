@@ -74,4 +74,21 @@ Show the updated account balances from database:
   Output: Account Id does not exist
   ![image](https://user-images.githubusercontent.com/115390606/194759185-5effff17-a8c6-48a4-abb2-d43ded665bae.png)
 
+  ----------------------------------------------------------------------------------------------------------------
   
+I have enabled the application to use Docker. The docker Images is buid with Maven and it is called backend-container:
+  
+![image](https://user-images.githubusercontent.com/115390606/195055439-c3815abc-1674-44b2-b44e-196b16222537.png)
+
+The Money Transfer application is running inside the docker. I have created a bash script to show that the request can be called within a bash script. Also I executed the curl commands to display output the result. 
+
+![image](https://user-images.githubusercontent.com/115390606/195057747-a6844fa6-608c-4061-b2f3-ffdcb510a44a.png)
+
+Below are the values shows in the database after the update of balance. 
+
+![image](https://user-images.githubusercontent.com/115390606/195058121-b8be30c8-a78a-4e0b-9d9e-8696eaa09ad6.png)
+
+------------------------------------------------------------------------------------------------------------------
+
+Since it is just a test I have not included the below however these are things that can be improved in the application: 
+* To add more error/expection handling and add more logs.
