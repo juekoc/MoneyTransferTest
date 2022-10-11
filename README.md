@@ -2,22 +2,22 @@
 
 This is a RESTful API for money transfers between accounts. I have used Maven for dependency injection using Spring and Java as the main programing language. It uses SpringData JPA to connect and access a local MySQL database.
 
-- I have used Spring Initializr  that creates a simple class for the application - MoneytransferTestAppApplication. The main() method uses Spring Boot’s SpringApplication.run() method to launch an application. 
+- I have used Spring Initializr  that creates a simple class for the application - MoneytransferTestAppApplication. The main() method uses Spring Boot’s SpringApplication.run() method to launch the application. 
 - I have created Account class where I have defined Account as JPA Entity Model. The Account class has 3 attributes: id,  name and balance. These properties are mapped to fields used in the MySQL table. In here I have also defined the method that will make possible the transfer between accounts. 
-- I have used JpaRepository to create a repository Account. This Interface works with Account Entity to hold the records of Account Entity AccountData table from Accounts Schema of MySQL database. AccountRepository extends the JpaRepository interface. This way it inherits several methods working with Account such as findById, findAll() and save().
-- I have created a controller class Controller, to handle HTTP requests to my application. In this application we will use GET and POST requests. 
+- I have used JpaRepository to create a repository Account. This Interface works with Account Entity to hold the records of AccountData table from Accounts Schema of MySQL database. AccountRepository extends the JpaRepository interface. This way it inherits several methods working with Account such as findById, findAll() and save().
+- I have created a controller class called Controller, to handle HTTP requests to my application. In this application we will use GET and POST requests. 
 
 GET: http://localhost:8080/moneytransfer/account/all 
 It will list all the accounts retrieved from the database.
 
 GET: http://localhost:8080/moneytransfer/account/1
-It will list the specific account record. 
+It will list the specific account record. In this case for account 1.
 
 Post: http://localhost:8080/moneytransfer/transferMoney?fromaccount=3&toaccount=1&amount=4
-It will send the request to process the money transefer. In the url you have to define the paramer of account id from where you want to get the money, the account id where you want to transfer the money and the amount to be transfered.
+It will send the request to process the money transfer. In the url you have to define: the parameter of account id from where you want to get the money, the account id where you want to transfer the money to and the amount to be transfered.
 
 ---------------------------------------------------------
-Built and test the application
+Build and test the application
 
 * Build the JAR file using Maven with the below command: 
 ./mvnw clean package
@@ -37,17 +37,17 @@ Command: curl http://localhost:8080/moneytransfer/account/all
 Output: 
 ![image](https://user-images.githubusercontent.com/115390606/194754805-368f84e6-a831-4891-9de7-0c991faeefff.png)
 
-Confirm with the values from the MySQL database: 
+Confirm the values from MySQL database: 
 ![image](https://user-images.githubusercontent.com/115390606/194754830-ab98c804-9b6d-4ccc-8765-4bd9346cad3f.png)
 
 
-* Show specific account. In below request we are searching for accountId 1
+* Show specific account. In below request we are searching for accountId 1.
 
 Command: curl http://localhost:8080/moneytransfer/account/1
 Output: 
 ![image](https://user-images.githubusercontent.com/115390606/194754906-3fa005e4-ba6e-4db3-853c-6a56fb10bc5b.png)
 
-* Money Transfer Transaction. Transfer money from one account to another. In below request we are transfering money from AccountId 1 to AccountId 2. The transferred amount will be 10. 
+* Money Transfer Transaction. Transfer money from one account to another. In the below request we are transfering money from AccountId 1 to AccountId 2. The transferred amount will be 10. 
 
 Check what are the values in MySQL database before doing the transfer
 ![image](https://user-images.githubusercontent.com/115390606/194756453-43bcb6d0-8b90-454f-a863-8f2efca3782e.png)
@@ -64,19 +64,19 @@ Show the updated account balances from database:
   
   Command: curl -X POST -d "fromaccount=1&toaccount=2&amount=100" http://localhost:8080/moneytransfer/transferMoney
   
-  Output: Unsufficient funds in the first account  
+  Output: Unsufficient funds in the first account.  
   ![image](https://user-images.githubusercontent.com/115390606/194759096-e5bcf984-5cf7-444b-94b1-40ca6e52005e.png)
    
   * Money transfer failed because we could not identify one of the account ids;
   
   Command: curl -X POST -d "fromaccount=1&toaccount=8&amount=10" http://localhost:8080/moneytransfer/transferMoney
   
-  Output: Account Id does not exist
+  Output: Account Id 8 does not exist
   ![image](https://user-images.githubusercontent.com/115390606/194759185-5effff17-a8c6-48a4-abb2-d43ded665bae.png)
 
   ----------------------------------------------------------------------------------------------------------------
   
-I have enabled the application to use Docker. The docker Images is buid with Maven and it is called backend-container. 
+I have enabled the application to use Docker. The docker Image is built with Maven and it is called backend-container. 
   
 ![image](https://user-images.githubusercontent.com/115390606/195055439-c3815abc-1674-44b2-b44e-196b16222537.png)
 
@@ -84,15 +84,15 @@ The below shows that the application is running:
 
 ![image](https://user-images.githubusercontent.com/115390606/195059756-2cd1ee6f-7b27-405b-8093-b650bcd41784.png)
 
-The Money Transfer application is running inside the docker. I have created a bash script to show that the request can be called within a bash script. The script executes the transfer of 10 euros from account 2 to account 1.  Also I executed the curl commands to display output the result. 
+The Money Transfer application is running inside the docker. I have created a script to show that the request can be called within a bash script. The script executes the transfer of 10 euros from account id 2 to account id 1.  Also, I executed the curl commands to display the updated values. 
 
 ![image](https://user-images.githubusercontent.com/115390606/195057747-a6844fa6-608c-4061-b2f3-ffdcb510a44a.png)
 
-Below are the values shows in the database after the update of balance. 
+Below are the values shown in the database after the transfer of money. 
 
 ![image](https://user-images.githubusercontent.com/115390606/195058121-b8be30c8-a78a-4e0b-9d9e-8696eaa09ad6.png)
 
-Errors in case of entering accounts Ids that do not exist or unsufficient balance
+Errors in case of entering account Ids that do not exist or unsufficient balance
 
 ![image](https://user-images.githubusercontent.com/115390606/195061559-03d02fe3-79f6-449c-88b5-e941a4358ad0.png)
 
@@ -102,4 +102,5 @@ In this exersice I focused more of having a clean and simple code. I got to lear
 
 ------------------------------------------------------------------------------------------------------------------
 Since it is just a simple test I have not included the below, however these are things that can be improved in the application: 
-* To add more error/expection handling and add more logs.
+* To add more error/expection handling 
+* Add more logs.
