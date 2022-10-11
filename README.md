@@ -92,7 +92,14 @@ Below are the values shows in the database after the update of balance.
 
 ![image](https://user-images.githubusercontent.com/115390606/195058121-b8be30c8-a78a-4e0b-9d9e-8696eaa09ad6.png)
 
+Errors in case of entering accounts Ids that do not exist or unsufficient balance
+
+![image](https://user-images.githubusercontent.com/115390606/195061559-03d02fe3-79f6-449c-88b5-e941a4358ad0.png)
+
 ------------------------------------------------------------------------------------------------------------------
 
+In this exersice I focused more of having a clean and simple code. I got to learn more about SpringBoot applications and the dependecies that can be added to the project to use predefined methods.I learned a lot about Dockers and how to manage them. 
+
+------------------------------------------------------------------------------------------------------------------
 Since it is just a simple test I have not included the below, however these are things that can be improved in the application: 
 * To add more error/expection handling and add more logs.
